@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom CSS beyond Tailwind */
+body {
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+.page-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.5s ease-in-out forwards;
+}
+
+/* Card styles */
+.card {
+  @apply bg-white rounded-lg shadow-md p-6 transition-all duration-300;
+}
+
+.card:hover {
+  @apply shadow-lg transform translate-y-[-5px];
+}
+
+/* Phase card for DevOps Lifecycle */
+.phase-card {
+  @apply bg-white rounded-lg shadow-sm p-4 border-l-4 transition-all duration-300;
+}
+
+.phase-card:hover {
+  @apply shadow-md transform translate-x-[3px];
+}
+
+/* The 7 C's cards */
+.c-card {
+  @apply bg-white rounded-lg shadow-md p-6 border-t-4 transition-all duration-300;
+}
+
+.c-card:hover {
+  @apply shadow-lg transform translate-y-[-5px];
+}
+
+/* Tool cards */
+.tool-card {
+  @apply bg-white rounded-lg shadow-md p-6 flex flex-col items-center justify-center text-center gap-4 cursor-pointer transition-all duration-300;
+}
+
+.tool-card:hover {
+  @apply shadow-lg transform translate-y-[-5px] bg-gray-50;
+}
+
+/* Modal styles */
+.modal-overlay {
+  @apply fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 animate-fade-in;
+  display: none;
+}
+
+.modal-content {
+  @apply bg-white rounded-xl shadow-xl w-full max-w-2xl mx-4 animate-slide-in;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+/* Navigation links */
+.page-nav a {
+  @apply inline-flex items-center justify-center w-8 h-8 text-center rounded-full transition-colors duration-300;
+}
+
+.page-nav a.active {
+  @apply bg-blue-500 text-white;
+}
+
+.page-nav a:not(.active) {
+  @apply text-gray-700 hover:bg-gray-100;
+}
+
+/* Inputs */
+.form-input {
+  @apply w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200;
+}
+
+/* Buttons */
+.btn {
+  @apply px-4 py-2 rounded-lg font-medium transition-all duration-200;
+}
+
+.btn-primary {
+  @apply bg-blue-500 text-white hover:bg-blue-600;
+}
+
+.btn-secondary {
+  @apply bg-gray-200 text-gray-800 hover:bg-gray-300;
+}
+
+.btn-danger {
+  @apply bg-red-500 text-white hover:bg-red-600;
+}
